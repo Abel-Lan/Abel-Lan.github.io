@@ -12,7 +12,10 @@ const BlogIndex = ({ data, location }) => {
   if (posts.length === 0) {
     return (
       <Layout location={location} title={siteTitle}>
-        <SEO title="All posts" />
+        <SEO 
+            title="Jaw Crushers, Cone Crushers, Mobile Crushing Plant, Sand Maker Feeding Machines and Vibrating Screens"
+            description="Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker China that are widely used in mining, construction, highway, bridge, coal, chemical, metallurgy, refractory matter, etc. "
+        />
         <Bio />
         <p>
           No blog posts found. Add markdown posts to "content/blog" (or the
@@ -25,9 +28,12 @@ const BlogIndex = ({ data, location }) => {
 
   return (
     <Layout location={location} title={siteTitle}>
-      <SEO title="All posts" />
+        <SEO 
+            title="Jaw Crushers, Cone Crushers, Mobile Crushing Plant, Sand Maker Feeding Machines and Vibrating Screens"
+            description="Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker China that are widely used in mining, construction, highway, bridge, coal, chemical, metallurgy, refractory matter, etc. "
+        />
       <Bio />
-      <ol style={{ listStyle: `none` }}>
+      <ol className="blogList" style={{ listStyle: `none` }}>
         {posts.map(post => {
           const title = post.frontmatter.title || post.fields.slug
 
@@ -59,6 +65,11 @@ const BlogIndex = ({ data, location }) => {
           )
         })}
       </ol>
+      <div className="indexLink">
+          <Link to="/blog/" itemProp="url">
+              <span itemProp="headline">All Blogs</span>
+           </Link>
+      </div>
     </Layout>
   )
 }
@@ -72,7 +83,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 10
+    ) {
       nodes {
         excerpt
         fields {

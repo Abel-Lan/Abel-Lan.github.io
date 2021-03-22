@@ -183,6 +183,10 @@ ol li {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
 
+.blogList li{
+  margin-bottom: calc(var(--spacing-12) / 2);
+}
+
 li > p {
   margin-bottom: calc(var(--spacing-8) / 2);
 }
@@ -216,16 +220,10 @@ blockquote > ol {
   list-style-position: inside;
 }
 
-table {
-  width: 100%;
-  margin-bottom: var(--spacing-8);
-  border-collapse: collapse;
-  border-spacing: 0.25rem;
-}
-
-table thead tr th {
-  border-bottom: 1px solid var(--color-accent);
-}
+table{border-collapse:collapse;border-spacing:0;empty-cells:show;width:100%;max-width:100%;margin-bottom: var(--spacing-8);}
+table,th,td{border-width: 1px;border-style:solid;border-color:rgba(224, 229, 235, 0.9);}
+th,td{padding:0.5em 0.6em}
+th{font-weight:600}
 
 /* Link */
 
@@ -260,8 +258,16 @@ a:focus {
 }
 
 .post-list-item {
-  margin-bottom: var(--spacing-8);
-  margin-top: var(--spacing-8);
+    position: relative;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-color: #f0f0f2;
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 
 .post-list-item p {
@@ -319,6 +325,27 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+.postTags h4{
+  margin: 1.6rem auto 1rem auto;
+}
+
+.taglist{
+  list-style: none;
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-top: 1.0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: left;
+  align-items: center
+}
+
+.taglist li{
+  padding: 0 2rem 1rem 0;
+  margin-bottom: 0.5rem;
+  margin-top: 0
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {
@@ -329,5 +356,33 @@ a:focus {
   ul,
   ol {
     list-style-position: inside;
+  }
+}
+
+@media (min-width: 42rem) {
+  .post-list-item {
+    padding: 3rem;
+    box-shadow: rgb(46 41 51 / 8%) 0px 1px 2px, rgb(71 63 79 / 8%) 0px 2px 4px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    border: 0px;
+    margin-bottom: 1.5rem;
+    margin-left: 0rem;
+    margin-right: 0rem;
+    transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s, padding 250ms cubic-bezier(0.4, 0, 0.2, 1) 0s;
+  }
+  .post-list-item:hover {
+    transform: translateY(-0.25rem);
+    box-shadow: rgb(46 41 51 / 8%) 0px 4px 8px, rgb(71 63 79 / 16%) 0px 8px 16px;
+  }
+  .post-list-item:active {
+    transform: translateY(0px);
+  }
+}
+
+@media (min-width: 750px){
+  .post-list-item {
+    margin-left: -3rem;
+    margin-right: -3rem;
   }
 }

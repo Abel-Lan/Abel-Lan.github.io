@@ -1,14 +1,16 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Blog`,
+    title: `China Crusher | Mesto, Sandvik, LiMing`,
+    SEOtitle: `China Crusher | Manufactures mobile crushers, jaw crushers, Cone Crushers | Mesto, Sandvik, LiMing`,
+    SEOdescription: `China Crusher | Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker | Mesto, Sandvik, LiMing`,
     author: {
-      name: `Kyle Mathews`,
-      summary: `who lives and works in San Francisco building useful things.`,
+      name: `China Crusher`,
+      summary: `Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker China that are widely used in mining, construction, highway, bridge, coal, chemical, metallurgy, refractory matter, etc. `,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    description: `Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker China that are widely used in mining, construction, highway, bridge, coal, chemical, metallurgy, refractory matter, etc. `,
+    siteUrl: `https://www.marquettehs.com`,
     social: {
-      twitter: `kylemathews`,
+      email: `lydhcrusher@gmail.com`
     },
   },
   plugins: [
@@ -16,7 +18,7 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/content/blog`,
+        path: `${__dirname}/content`,
         name: `blog`,
       },
     },
@@ -112,19 +114,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: `China Crusher - Manufactures mobile crushers, mobile jaw crushers, Cone Crushers, Sand Maker`,
+        short_name: `China Crusher`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/icon.png`, // This path is relative to the root of the site.
       },
     },
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-gatsby-cloud`,
+    // `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-sitemap`,
   ],
 }
